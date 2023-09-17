@@ -1,0 +1,8 @@
+IdentitiesOnly yes
+
+Host *
+	UseKeychain yes
+	AddKeysToAgent yes
+
+Host github.com
+	IdentityFile ~/.ssh/id_github

@@ -1,0 +1,12 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	email = 38229097+cedws@users.noreply.github.com
+	name = Connor Edwards
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
