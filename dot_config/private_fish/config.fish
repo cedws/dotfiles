@@ -17,7 +17,11 @@ if status is-interactive
     set -x VISUAL nano
     set -x EDITOR $VISUAL
 
-    alias ls="exa"
     alias rg="rg --no-ignore -F"
     alias fd="fd --no-ignore"
+
+    alias ga="git add -p"
+    alias gc="git commit -v"
+    alias gp="git push"
+    alias gs="git switch"
 end
