@@ -7,10 +7,11 @@ if status is-interactive
     set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";
     set -gx HOMEBREW_REPOSITORY "/opt/homebrew";
 
-    set -q MANPATH; or set MANPATH ''
-    set -gx MANPATH "/opt/homebrew/share/man" $MANPATH
-    set -q INFOPATH; or set INFOPATH ''
-    set -gx INFOPATH "/opt/homebrew/share/info" $INFOPATH
+    set MANPATH ''
+    set -x MANPATH "/opt/homebrew/share/man:$MANPATH"
+    set -x MANPATH "$HOME/.local/share/man-get:$MANPATH"
+    set INFOPATH ''
+    set -x INFOPATH "/opt/homebrew/share/info:$INFOPATH"
 
     fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
     fish_add_path /opt/homebrew/opt/openjdk@11/bin;
