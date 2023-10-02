@@ -4,8 +4,8 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	email = 38229097+cedws@users.noreply.github.com
-	name = Connor Edwards
+	email = {{ (dig "git" "email" "" .) | quote }}
+	name = {{ (dig "git" "name" "" .) | quote }}
 [pull]
 	rebase = true
 [init]
