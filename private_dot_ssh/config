@@ -1,5 +1,6 @@
-Include ~/.orbstack/ssh/config
 IdentitiesOnly yes
+UserKnownHostsFile ~/.ssh/known_hosts.d/%k
+Include ~/.orbstack/ssh/config
 
 Host *
 	UseKeychain yes
