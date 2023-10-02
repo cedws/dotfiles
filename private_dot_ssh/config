@@ -7,7 +7,6 @@ Host *
 	AddKeysToAgent yes
 
 Host orb
-	IdentityFile ~/.orbstack/ssh/id_ed25519
 	StrictHostKeyChecking no
 
 Host github.com
