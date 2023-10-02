@@ -1,0 +1,4 @@
+[".config/k9s/skin.yml"]
+type = "file"
+url = "https://raw.githubusercontent.com/derailed/k9s/master/skins/nord.yml"
+refreshPeriod = "168h"
