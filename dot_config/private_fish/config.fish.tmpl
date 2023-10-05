@@ -3,6 +3,13 @@ if status is-interactive
 
     set fish_greeting
 
+    if command -q rtx
+        rtx activate fish | source
+    end
+    if command -q direnv
+        direnv hook fish | source
+    end
+
     set -gx HOMEBREW_PREFIX "/opt/homebrew";
     set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";
     set -gx HOMEBREW_REPOSITORY "/opt/homebrew";
@@ -15,11 +22,14 @@ if status is-interactive
 
     fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
     fish_add_path /opt/homebrew/opt/openjdk@11/bin;
+    fish_add_path ~/.cargo/bin
     fish_add_path ~/go/bin
+    fish_add_path ~/bin
 
     set -x VISUAL nano
     set -x EDITOR $VISUAL
     set -x K9SCONFIG ~/.config/k9s
+    set -x GOPRIVATE {{ (dig "GOPRIVATE" "" .) | quote }}
 
     alias rg="rg --no-ignore -F"
     alias fd="fd --no-ignore"
