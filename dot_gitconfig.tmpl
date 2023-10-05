@@ -3,10 +3,16 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
 [user]
 	email = {{ (dig "git" "email" "" .) | quote }}
 	name = {{ (dig "git" "name" "" .) | quote }}
 [pull]
 	rebase = true
+[rebase]
+	autoStash = true
+[merge]
+	autoStash = true
 [init]
 	defaultBranch = master
