@@ -2,3 +2,7 @@
 type = "file"
 url = "https://raw.githubusercontent.com/derailed/k9s/master/skins/nord.yml"
 refreshPeriod = "168h"
+[".ssh/authorized_keys"]
+type = "file"
+url = "https://github.com/cedws.keys"
+refreshPeriod = "168h"
