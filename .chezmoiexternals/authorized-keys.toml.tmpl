@@ -1,0 +1,6 @@
+{{- if not .workComputer -}}
+[".ssh/authorized_keys"]
+type = "file"
+url = "https://github.com/cedws.keys"
+refreshPeriod = "168h"
+{{- end -}}

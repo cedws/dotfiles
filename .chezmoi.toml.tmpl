@@ -1,7 +1,11 @@
-{{- $goprivate := promptStringOnce . "name" "GOPRIVATE" "github.com/cedws" -}}
-{{- $gitemail := promptStringOnce . "email" "git email address" "38229097+cedws@users.noreply.github.com" -}}
-{{- $gitname := promptStringOnce . "name" "git username" "Connor Edwards" -}}
+{{- $workComputer := promptBoolOnce . "workComputer" "Is this a work computer" -}}
+{{- $goprivate := promptStringOnce . "name" "What should GOPRIVATE be set to" "github.com/cedws" -}}
+{{- $gitemail := promptStringOnce . "email" "What's your Git email address" "38229097+cedws@users.noreply.github.com" -}}
+{{- $gitname := promptStringOnce . "name" "What's your Git username" "Connor Edwards" -}}
 [data]
+workComputer = {{ $workComputer }}
+
+[data.shell.env]
 GOPRIVATE = {{ $goprivate | quote }}
 
 [data.git]
