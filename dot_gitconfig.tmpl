@@ -9,6 +9,8 @@
 	useConfigOnly = true
 	email = {{ (dig "git" "email" "" .) | quote }}
 	name = {{ (dig "git" "name" "" .) | quote }}
+[commit]
+	verbose = true
 [push]
 	autoSetupRemote = true
 [pull]
