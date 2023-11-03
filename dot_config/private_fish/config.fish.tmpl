@@ -9,6 +9,9 @@ if status is-interactive
     if command -q direnv
         direnv hook fish | source
     end
+    if test -f (brew --prefix)/share/google-cloud-sdk/path.fish.inc
+        source (brew --prefix)/share/google-cloud-sdk/path.fish.inc
+    end
 
     set -gx HOMEBREW_PREFIX "/opt/homebrew";
     set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";
