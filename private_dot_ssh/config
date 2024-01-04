@@ -3,6 +3,7 @@ UserKnownHostsFile ~/.ssh/known_hosts.d/%k
 Include ~/.orbstack/ssh/config
 
 Host *
+	User root
 	UseKeychain yes
 	AddKeysToAgent yes
 
