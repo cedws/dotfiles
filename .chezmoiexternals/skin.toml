@@ -1,4 +1,4 @@
-[".config/k9s/skin.yml"]
+[".config/k9s/skin.yaml"]
 type = "file"
-url = "https://raw.githubusercontent.com/derailed/k9s/master/skins/nord.yml"
+url = "https://raw.githubusercontent.com/derailed/k9s/master/skins/nord.yaml"
 refreshPeriod = "168h"
