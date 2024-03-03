@@ -12,10 +12,6 @@ if status is-interactive
         end
     end
 
-    set -gx HOMEBREW_PREFIX "/opt/homebrew";
-    set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";
-    set -gx HOMEBREW_REPOSITORY "/opt/homebrew";
-
     set MANPATH ''
     set -x MANPATH "/opt/homebrew/share/man:$MANPATH"
     set -x MANPATH "$HOME/.local/share/man-get:$MANPATH"
@@ -36,9 +32,4 @@ if status is-interactive
 
     alias rg="rg --no-ignore -F"
     alias fd="fd --no-ignore"
-
-    alias ga="git add -p"
-    alias gc="git commit"
-    alias gp="git push"
-    alias gs="git switch"
 end
