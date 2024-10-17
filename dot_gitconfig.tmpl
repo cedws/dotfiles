@@ -19,11 +19,111 @@
 	autoStash = true
 [merge]
 	autoStash = true
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	useConfigOnly = true
+	email = {{ (dig "git" "email" "" .) | quote }}
+	name = {{ (dig "git" "name" "" .) | quote }}
+[commit]
+	verbose = true
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[merge]
+	autoStash = true
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	useConfigOnly = true
+	email = {{ (dig "git" "email" "" .) | quote }}
+	name = {{ (dig "git" "name" "" .) | quote }}
+[commit]
+	verbose = true
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[merge]
+	autoStash = true
 [init]
 	defaultBranch = master
 [alias]
 	a = add -p
+	ad = add -p
+
+	t = tag
+	ta = tag
+
 	c = commit -v
-	p = push
-	s = switch
-	u = pull
+	co = commit -v
+	com = commit -v
+	comm = commit -v
+	commi = commit -v
+
+	ps = push
+	pus = push
+
+	pl = pull
+	pul = pull
+
+	sw = switch
+	swi = switch
+	swit = switch
+	switc = switch
+
+	st = status
+	sta = status
+	stat = status
+	statu = status
+
+	cl = clone
+	clo = clone
+	clon = clone
+
+	d = diff
+	di = diff
+	dif = diff
+
+	st = status
+	sta = status
+	stat = status
+	statu = status
+
+	re = rebase
+	reb = rebase
+	reba = rebase
+	rebas = rebase
+
+	in = init
+	ini = init
+
+	fe = fetch
+	fet = fetch
+	fetc = fetch
+
+	cl = clean
+	cle = clean
+	clea = clean
+
+	ch = checkout
+	che = checkout
+	chec = checkout
+	check = checkout
+	checko = checkout
+	checkou = checkout
