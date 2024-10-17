@@ -1,4 +1,4 @@
-IdentitiesOnly yes
+IdentityFile /dev/null
 UserKnownHostsFile ~/.ssh/known_hosts.d/%k
 Include ~/.orbstack/ssh/config
 
@@ -11,4 +11,4 @@ Host orb
 	StrictHostKeyChecking no
 
 Host github.com
-	IdentityFile ~/.ssh/id_github
+	IdentityAgent "~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"

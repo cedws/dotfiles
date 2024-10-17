@@ -29,6 +29,7 @@ if status is-interactive
     set -x K9SCONFIG ~/.config/k9s
     set -x GOPRIVATE {{ (dig "shell" "env" "GOPRIVATE" "" .) | quote }}
     set -x HOMEBREW_AUTO_UPDATE_SECS 86400
+    set -x SSH_AUTH_SOCK ~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 
     alias rg="rg --no-ignore -F"
     alias fd="fd --no-ignore"
