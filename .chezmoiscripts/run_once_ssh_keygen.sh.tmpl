@@ -1,4 +1,4 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
-ssh-keygen -q -C '' -t ed25519 -f ~/.ssh/id_github || true
+ssh-keygen -q -C '' -t ed25519 -f ~/.ssh/id_anon || true
 {{- end -}}
