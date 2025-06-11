@@ -1,4 +1,9 @@
 {
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "auto_update": false,
   "show_edit_predictions": true,
   "languages": {
     "Terraform": {
@@ -43,37 +48,30 @@
   "buffer_font_size": 13.0,
   "ensure_final_newline_on_save": true,
   "collaboration_panel": {
-    "button": false
+    "button": "never"
   },
   "chat_panel": {
     "button": "never"
   },
-  "assistant": {
+  "agent": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
     },
+    "default_profile": "write",
     "version": "2"
   },
   "features": {
     "edit_prediction_provider": "copilot",
     "copilot": true
   },
-  "language_models": {
-    "ollama": {
-      "api_url": "http://localhost:11434",
-      "available_models": [
-        {
-          "name": "qwen2.5-coder:7b",
-          "display_name": "qwen2.5-coder 7b 32K",
-          "max_tokens": 32768
-        },
-        {
-          "name": "deepseek-r1:8b",
-          "display_name": "deepseek-r1 8b 32K",
-          "max_tokens": 32768
-        }
-      ]
+  "language_models": {},
+  "lsp": {
+    "protobuf-language-server": {
+      "binary": {
+        "path": "buf",
+        "arguments": ["beta", "lsp"]
+      }
     }
   }
 }
