@@ -48,7 +48,7 @@
   "buffer_font_size": 13.0,
   "ensure_final_newline_on_save": true,
   "collaboration_panel": {
-    "button": "never"
+    "button": false
   },
   "chat_panel": {
     "button": "never"
