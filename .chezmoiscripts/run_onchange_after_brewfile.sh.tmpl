@@ -1,5 +1,0 @@
-{{- if eq .chezmoi.os "darwin" -}}
-#!/bin/sh
-# {{ include "Brewfile" | sha256sum }}
-/opt/homebrew/bin/brew bundle
-{{- end -}}
