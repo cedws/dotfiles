@@ -1,4 +1,6 @@
-if command -q /opt/homebrew/bin/brew
+if command -q /opt/workbrew/bin/brew
+    eval (/opt/workbrew/bin/brew shellenv)
+else if command -q /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
 end
 
