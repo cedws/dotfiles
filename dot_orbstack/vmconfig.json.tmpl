@@ -1,5 +1,7 @@
+{{- if eq .chezmoi.os "darwin" -}}
 {
 	"docker.set_context": false,
 	"power.pause_on_sleep": false,
 	"setup.use_admin": true
 }
+{{- end }}
