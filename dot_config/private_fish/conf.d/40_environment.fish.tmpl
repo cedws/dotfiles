@@ -2,7 +2,7 @@ set -x VISUAL vim
 set -x EDITOR $VISUAL
 set -x K9SCONFIG ~/.config/k9s
 set -x GOPRIVATE {{ (dig "shell" "env" "GOPRIVATE" "" .) | quote }}
-{{- if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
+set -x SSH_SK_PROVIDER "/usr/lib/ssh-keychain.dylib"
 set -x HOMEBREW_AUTO_UPDATE_SECS 86400
-set -x SSH_AUTH_SOCK ~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 {{- end }}

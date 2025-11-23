@@ -6,7 +6,7 @@ if command -q mise
     mise activate fish | source
 end
 
-{{- if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 if command -q /opt/workbrew/bin/brew
     eval (/opt/workbrew/bin/brew shellenv)
 else if command -q /opt/homebrew/bin/brew
