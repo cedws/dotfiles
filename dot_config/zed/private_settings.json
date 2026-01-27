@@ -25,10 +25,10 @@
       "format_on_save": "on",
       "formatter": [
         {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
+          "code_action": "source.organizeImports.ruff"
+        },
+        {
+          "code_action": "source.fixAll.ruff"
         },
         {
           "language_server": {
@@ -54,12 +54,12 @@
     "button": "never"
   },
   "agent": {
+    "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "provider": "openrouter",
+      "model": "anthropic/claude-haiku-4.5"
     },
-    "default_profile": "write",
-    "version": "2"
+    "default_profile": "ask"
   },
   "features": {
     "edit_prediction_provider": "copilot",
