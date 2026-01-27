@@ -9,7 +9,7 @@
     }
   },
   "permissions": {
-    "allow": ["Bash(ls *)", "Read(~/Documents/**)"],
+    "allow": ["Bash(ls *)", "Bash(find *)", "Read(~/Documents/**)"],
     "deny": [
       "Read(~/Library/**)",
       "Read(~/.ssh/**)",
