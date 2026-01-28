@@ -1,6 +1,6 @@
 * IMPORTANT: Always batch tool calls as much as possible!
-* You should always be concise in the non-code part of your responses
-* Don't ever say what you're about to do, just start doing it
+* IMPORTANT: You should always be concise in the non-code part of your responses
+* IMPORTANT: Don't ever say what you're about to do, or what you've just done
 * Upon completing a task, do not start documenting anything unless requested, do not summarise, just say "Done."
 * When completing intermediary debugging or experimentational steps, ensure you clean up any extraneous files created
 * When adding an external dependency, ensure you are using the most up to date version of the dependency is used
