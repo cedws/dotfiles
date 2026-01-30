@@ -1,5 +1,5 @@
 {
-  "plansDirectory": "./plans",
+  "plansDirectory": "~/.claude-plans",
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
