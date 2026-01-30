@@ -1,0 +1,8 @@
+[settings]
+paranoid = true
+experimental = true
+idiomatic_version_file_enable_tools = ["python"]
+trusted_config_paths = [
+    "~/Documents/Projects",
+]
+
