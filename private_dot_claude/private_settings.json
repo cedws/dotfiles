@@ -1,5 +1,4 @@
 {
-  "plansDirectory": "~/.claude-plans",
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
@@ -16,7 +15,6 @@
       "Read(~/.ssh/**)",
       "Read(~/.aws/**)",
       "Read(~/.gnupg/**)",
-      "Read(~/.claude/**)",
       "Read(~/.password-store/**)",
       "Read(~/.netrc)",
       "Read(~/.npmrc)",
@@ -39,7 +37,6 @@
       "Edit(~/.ssh/**)",
       "Edit(~/.aws/**)",
       "Edit(~/.gnupg/**)",
-      "Edit(~/.claude/**)",
       "Edit(~/.password-store/**)",
       "Edit(~/.netrc)",
       "Edit(~/.npmrc)",
@@ -57,7 +54,6 @@
       "Write(~/.ssh/**)",
       "Write(~/.aws/**)",
       "Write(~/.gnupg/**)",
-      "Write(~/.claude/**)",
       "Write(~/.password-store/**)",
       "Write(~/.netrc)",
       "Write(~/.npmrc)",
