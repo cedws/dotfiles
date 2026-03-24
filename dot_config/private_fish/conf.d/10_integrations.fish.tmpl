@@ -19,3 +19,7 @@ if command -q brew
     end
 end
 {{- end }}
+
+if test -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+end
