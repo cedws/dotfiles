@@ -1,0 +1,14 @@
+{ config, pkgs, lib, ... }:
+
+{
+  xdg.configFile."mise/config.toml" = {
+    force = true;
+    text = ''
+      [settings]
+      paranoid = true
+      experimental = true
+      idiomatic_version_file_enable_tools = ["python"]
+      trusted_config_paths = ["~/Documents/Projects"]
+    '';
+  };
+}

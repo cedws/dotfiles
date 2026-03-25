@@ -1,36 +1,22 @@
 {
-  description = "Home Manager config";
+  description = "Home Manager configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, llm-agents, ... }:
     let
       system = "aarch64-darwin";
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations."connor" =
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          modules = [{
-            home.username = "development";
-            home.homeDirectory = "/Users/development";
-            home.stateVersion = "24.05";
-
-            programs.home-manager.enable = true;
-
-            home.packages = with pkgs; [
-              git
-              ripgrep
-              fish
-            ];
-
-            programs.fish.enable = true;
-          }];
-        };
+      homeConfigurations.development = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home/development.nix ];
+        extraSpecialArgs = { inherit llm-agents system; };
+      };
     };
 }
