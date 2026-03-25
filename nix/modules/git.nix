@@ -22,6 +22,7 @@
 
       gpg.format = "ssh";
       gpg.ssh.defaultKeyCommand = "sh -c 'echo key::$(ssh-add -L)'";
+      commit.gpgsign = true;
 
       filter.lfs = {
         clean = "git-lfs clean -- %f";
