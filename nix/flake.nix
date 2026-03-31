@@ -15,7 +15,25 @@
     in {
       homeConfigurations.development = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/development.nix ];
+        modules = [
+          ({ lib, ... }: {
+            home.username = "development";
+            home.homeDirectory = "/Users/development";
+          })
+          ./home/development.nix
+        ];
+        extraSpecialArgs = { inherit llm-agents system; };
+      };
+
+      homeConfigurations.admin = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ({ lib, ... }: {
+            home.username = "admin";
+            home.homeDirectory = "/Users/admin";
+          })
+          ./home/development.nix
+        ];
         extraSpecialArgs = { inherit llm-agents system; };
       };
     };
