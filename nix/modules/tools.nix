@@ -1,7 +1,32 @@
-{ config, pkgs, lib, ... }:
-
 {
+  xdg.configFile."uv/uv.toml".text = ''
+    exclude-newer = "7 days"
+  '';
+
+  home.file.".npmrc".text = ''
+    min-release-age=7 # days
+    ignore-scripts=true
+  '';
+
+  home.file."Library/Preferences/pnpm/rc".text = ''
+    minimum-release-age=10080 # minutes
+  '';
+
+  home.file.".bunfig.toml".text = ''
+    [install]
+    minimumReleaseAge = 604800 # seconds
+  '';
+
   home.file.".digrc".text = "+search";
+
+  programs.gpg = {
+    enable = true;
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = false;
+  };
 
   programs.k9s = {
     enable = true;
