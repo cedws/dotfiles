@@ -1,5 +1,3 @@
-{ config, pkgs, lib, ... }:
-
 {
   xdg.configFile."mise/config.toml" = {
     force = true;

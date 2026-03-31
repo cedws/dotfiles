@@ -1,5 +1,3 @@
-{ config, pkgs, lib, ... }:
-
 {
   home.file.".codex/config.toml".text = ''
     model = "gpt-5.4"

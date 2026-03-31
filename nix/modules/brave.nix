@@ -1,5 +1,3 @@
-{ config, pkgs, lib, ... }:
-
 {
   home.file."Library/Application Support/BraveSoftware/Brave-Browser/External Extensions/cjpalhdlnbpafiamejdnhcphjbkeiagm.json".text = ''
     { "external_update_url": "https://clients2.google.com/service/update2/crx" }

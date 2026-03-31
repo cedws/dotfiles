@@ -1,5 +1,3 @@
-{ config, pkgs, lib, ... }:
-
 {
   xdg.configFile."zed/settings.json".text = builtins.toJSON {
     telemetry = {

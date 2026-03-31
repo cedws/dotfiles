@@ -1,5 +1,3 @@
-{ config, pkgs, lib, ... }:
-
 {
   home.file."Library/Application Support/CherryStudio/config.json".text = builtins.toJSON {
     clientId = "c36fcb7b-090e-4f0e-8136-f30ade47b367";

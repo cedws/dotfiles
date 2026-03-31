@@ -1,4 +1,10 @@
-{ config, pkgs, lib, llm-agents, system, ... }:
+{
+  pkgs,
+  lib,
+  llm-agents,
+  system,
+  ...
+}:
 
 {
   imports = [
@@ -43,46 +49,60 @@
 
   programs.home-manager.enable = true;
 
-  programs.git = {
-    settings.user = {
-      name = lib.mkDefault "Connor Edwards";
-      email = lib.mkDefault "38229097+cedws@users.noreply.github.com";
-    };
+  programs.git.settings.user = {
+    name = lib.mkDefault "Connor Edwards";
+    email = lib.mkDefault "38229097+cedws@users.noreply.github.com";
   };
 
-  home.packages = with pkgs; [
-    age
-    aria2
-    chezmoi
-    cue
-    duckdb
-    fd
-    ffmpeg
-    firefox
-    frida-tools
-    gnupg
-    hugo
-    just
-    kubectl
-    kubernetes-helm
-    nil
-    nixd
-    radare2
-    ripgrep
-    scorecard
-    talosctl
-    tart
-    terraform
-    terragrunt
-    tokei
-    trufflehog
-    vhs
-    wget
-    yt-dlp
-    yubikey-manager
-  ] ++ [
-    llm-agents.packages.${system}.claude-code
-    llm-agents.packages.${system}.codex
-    llm-agents.packages.${system}.opencode
-  ];
+  home.packages =
+    with pkgs;
+    [
+      age
+      aria2
+      chezmoi
+      cue
+      discord
+      duckdb
+      fd
+      ffmpeg
+      firefox
+      frida-tools
+      ghostty-bin
+      gnupg
+      htop
+      hugo
+      just
+      keepassxc
+      kubectl
+      kubernetes-helm
+      mpv
+      nil
+      nixd
+      obsidian
+      proton-pass
+      proton-vpn
+      radare2
+      ripgrep
+      scorecard
+      secretive
+      spotify
+      tailscale-gui
+      talosctl
+      tart
+      terraform
+      terragrunt
+      tokei
+      trufflehog
+      vhs
+      wget
+      wireshark
+      yt-dlp
+      yubikey-manager
+      zed-editor
+    ]
+    ++ [
+      (llm-agents.packages.${system}.claude-code.override { disableTelemetry = true; })
+      llm-agents.packages.${system}.codex
+      llm-agents.packages.${system}.opencode
+    ];
 }
