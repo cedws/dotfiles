@@ -65,8 +65,10 @@
       ffmpeg
       firefox
       frida-tools
+      gh
       ghostty-bin
       gnupg
+      go
       htop
       hugo
       just
