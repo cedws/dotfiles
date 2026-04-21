@@ -6,9 +6,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     llm-agents.url = "github:numtide/llm-agents.nix";
+    llama-cpp.url = "github:ggml-org/llama.cpp";
   };
 
-  outputs = { self, nixpkgs, home-manager, llm-agents, ... }:
+  outputs = { self, nixpkgs, home-manager, llm-agents, llama-cpp, ... }:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -22,7 +23,7 @@
           })
           ./home/development.nix
         ];
-        extraSpecialArgs = { inherit llm-agents system; };
+        extraSpecialArgs = { inherit llm-agents llama-cpp system; };
       };
 
       homeConfigurations.admin = home-manager.lib.homeManagerConfiguration {
@@ -34,7 +35,7 @@
           })
           ./home/development.nix
         ];
-        extraSpecialArgs = { inherit llm-agents system; };
+        extraSpecialArgs = { inherit llm-agents llama-cpp system; };
       };
     };
 }

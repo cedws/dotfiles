@@ -2,6 +2,7 @@
   pkgs,
   lib,
   llm-agents,
+  llama-cpp,
   system,
   ...
 }:
@@ -57,6 +58,7 @@
     [
       age
       aria2
+      bun
       chezmoi
       cue
       discord
@@ -69,14 +71,17 @@
       ghostty-bin
       gnupg
       go
+      goreleaser
       htop
       hugo
       just
       keepassxc
       kubectl
+      cosign
       kubernetes-helm
       mpv
       nil
+      zizmor
       nixd
       obsidian
       proton-pass
@@ -103,6 +108,6 @@
     ++ [
       (llm-agents.packages.${system}.claude-code.override { disableTelemetry = true; })
       llm-agents.packages.${system}.codex
-      llm-agents.packages.${system}.opencode
+      llama-cpp.packages.${system}.default
     ];
 }

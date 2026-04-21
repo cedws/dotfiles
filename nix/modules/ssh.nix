@@ -9,7 +9,7 @@
 
     matchBlocks = {
       "*" = {
-        user = "-";
+        user = "anon";
         extraOptions = {
           UseKeychain = "yes";
           AddKeysToAgent = "yes";
