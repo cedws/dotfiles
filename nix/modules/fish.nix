@@ -5,6 +5,7 @@
     shellAliases = {
       rg = "rg --no-ignore -F";
       fd = "fd --no-ignore";
+      zed = "zeditor";
     };
 
     shellInit = ''
@@ -45,6 +46,27 @@
         description = "Generate OTP code using YubiKey";
         body = ''
           ykman oath accounts code -s $argv | pbcopy; and echo "OTP code copied to clipboard"
+        '';
+      };
+
+      claude-zai = {
+        description = "Run claude with z.ai";
+        body = ''
+          set -lx ANTHROPIC_BASE_URL https://api.z.ai/api/anthropic
+          set -lx ANTHROPIC_AUTH_TOKEN (security find-generic-password -s claude-zai -w)
+          set -lx ANTHROPIC_DEFAULT_HAIKU_MODEL glm-4.5-air
+          set -lx ANTHROPIC_DEFAULT_SONNET_MODEL glm-5.1
+          set -lx ANTHROPIC_DEFAULT_OPUS_MODEL glm-5.1
+          set -lx API_TIMEOUT_MS 3000000
+          claude $argv
+        '';
+      };
+
+      claude-oauth = {
+        description = "Run claude with OAuth token";
+        body = ''
+          set -lx CLAUDE_CODE_OAUTH_TOKEN (security find-generic-password -s claude-oauth -w)
+          claude $argv
         '';
       };
 

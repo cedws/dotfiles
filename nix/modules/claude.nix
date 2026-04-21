@@ -1,12 +1,5 @@
 {
   home.file.".claude/settings.json".text = builtins.toJSON {
-    env = {
-      ANTHROPIC_BASE_URL = "https://api.z.ai/api/anthropic";
-      API_TIMEOUT_MS = "3000000";
-      ANTHROPIC_DEFAULT_HAIKU_MODEL = "glm-4.5-air";
-      ANTHROPIC_DEFAULT_SONNET_MODEL = "glm-5.1";
-      ANTHROPIC_DEFAULT_OPUS_MODEL = "glm-5.1";
-    };
     sandbox = {
       enabled = true;
       autoAllowBashIfSandboxed = true;
@@ -17,7 +10,11 @@
       };
     };
     permissions = {
-      allow = [ "Bash(ls *)" "Bash(find *)" "Read(~/Documents/**)" ];
+      allow = [
+        "Bash(ls *)"
+        "Bash(find *)"
+        "Read(~/Documents/**)"
+      ];
       deny = [
         "Read(~/Library/**)"
         "Read(~/.ssh/**)"
