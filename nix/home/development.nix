@@ -32,6 +32,7 @@
       EDITOR = "$VISUAL";
       K9S_CONFIG_DIR = "$HOME/.config/k9s";
       GOPRIVATE = "github.com/cedws";
+      GOTELEMETRY = "off";
       SSH_AUTH_SOCK = "$HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh";
       HOMEBREW_AUTO_UPDATE_SECS = "86400";
     };
