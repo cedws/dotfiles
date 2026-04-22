@@ -1,5 +1,5 @@
 {
-  home.file.".claude/settings.json".text = builtins.toJSON {
+  home.file.".claude/settings.local.json".text = builtins.toJSON {
     sandbox = {
       enabled = true;
       autoAllowBashIfSandboxed = true;
