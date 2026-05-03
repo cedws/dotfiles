@@ -58,17 +58,25 @@
     with pkgs;
     [
       age
+      android-tools
+      apktool
       aria2
       bun
+      caligula
       chezmoi
+      cosign
       cue
       discord
+      dolt
       duckdb
       fd
       ffmpeg
       firefox
+      flyctl
+      websocat
       frida-tools
       gh
+      ghidra-bin
       ghostty-bin
       gnupg
       go
@@ -77,14 +85,16 @@
       hugo
       just
       keepassxc
+      keepassxc
       kubectl
-      cosign
       kubernetes-helm
+      libkrun-efi
+      mitmproxy
       mpv
       nil
-      zizmor
       nixd
       obsidian
+      openjdk
       proton-pass
       proton-vpn
       radare2
@@ -92,6 +102,7 @@
       scorecard
       secretive
       spotify
+      step-cli
       tailscale-gui
       talosctl
       tart
@@ -99,16 +110,19 @@
       terragrunt
       tokei
       trufflehog
+      uv
       vhs
       wget
       wireshark
       yt-dlp
       yubikey-manager
       zed-editor
+      zizmor
     ]
     ++ [
       (llm-agents.packages.${system}.claude-code.override { disableTelemetry = true; })
       llm-agents.packages.${system}.codex
+      llm-agents.packages.${system}.opencode
       llama-cpp.packages.${system}.default
     ];
 }
