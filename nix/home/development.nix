@@ -51,7 +51,7 @@
 
   programs.git.settings.user = {
     name = lib.mkDefault "Connor Edwards";
-    email = lib.mkDefault "38229097+cedws@users.noreply.github.com";
+    email = lib.mkDefault "git@cedwards.xyz";
   };
 
   home.packages =
